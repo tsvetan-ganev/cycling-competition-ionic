@@ -1,18 +1,25 @@
-<ion-view view-title="{{day.description}}">
+<ion-view> 
+    <ion-nav-title>Program - {{day.description}}</ion-nav-title>
     <ion-content>
-        <div class="text-center bg-dark padding">
-            <h2 class="text-light">{{day.description}}</h2>
-            <h3 class="text-light">{{day.date | date:'EEEE'}}</h3>
-            <p class="text-light">{{day.date | date:'dd.MM.yyyy'}}</p>
+        <div class="spinner-container" ng-show="loading">
+            <ion-spinner class="spinner" ></ion-spinner>
         </div>
-        <ion-list>
-            <ion-item ng-repeat="competition in competitions" ng-class-even="'even'">
-                <div>
-                    <h2>{{competition.name}}</h2>
-                    <h3>{{competition.startingTime}}</h3>
-                    <p>{{competition.description}}</p>
-                </div>
-            </ion-item>
-        </ion-list>
+
+        <div class="day-details" ng-hide="loading">
+            <div class="text-center bg-dark padding">
+                <h2 class="text-light">{{day.description}}</h2>
+                <h3 class="text-light">{{day.date | date:'EEEE'}}</h3>
+                <p class="text-light">{{day.date | date:'dd.MM.yyyy'}}</p>
+            </div>
+            <ion-list>
+                <ion-item ng-repeat="competition in competitions" ng-class-even="'even'">
+                    <div>
+                        <h2>{{competition.name}}</h2>
+                        <h3>{{competition.startingTime}}</h3>
+                        <p>{{competition.description}}</p>
+                    </div>
+                </ion-item>
+            </ion-list>
+        </div>
     </ion-content>
 </ion-view>

@@ -1,10 +1,11 @@
 angular.module('app.controllers')
 
-.controller('CyclistsController', function ($scope, Cyclists) {
+.controller('CyclistsController', function($scope, Cyclists) {
     $scope.cyclists = [];
+    $scope.loading = true;
 
-    Cyclists.getAll().then(function (res) {
-        console.log(res.data);
-         $scope.cyclists = res.data;
+    Cyclists.getAll().then(function(res) {
+        $scope.cyclists = res.data;
+        $scope.loading = false;
     });
 });

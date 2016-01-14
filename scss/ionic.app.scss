@@ -6,6 +6,7 @@ $balanced:                        #33cd5f !default;
 $energized:                       #ffc900 !default;
 $assertive:                       #d50000 !default;
 $royal:                           #886aea !default;
+$light-gray:                      #eeeeee !default;
 $dark:                            #404041 !default;
 
 // The path for our ionicons font files, relative to the built CSS in www/css
@@ -33,6 +34,10 @@ ion-tab {
 
 .bg-stable {
     background-color: $stable;
+}
+
+.bg-light-gray {
+    background-color: $light-gray;
 }
 
 .text-light {

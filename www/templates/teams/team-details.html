@@ -1,19 +1,26 @@
-<ion-view view-title="Team Details">
-    <ion-content class="text-center padding bg-stable">
-        <h2>
-            <span class="bold">{{team.ranking}}.</span> {{team.name}}
-        </h2>
-        <img src="{{team.outfitPicture}}" />
-        <h3>{{team.laps}} laps</h3>
-        
-        <div class="row padding">
-            <div class="card col col-50 black-number-cyclist bg-dark">
-                <h4 class="text-light">{{team.cyclistBlackNumber.firstName}} {{team.cyclistBlackNumber.lastName}}</h4>
-                <img ng-src="{{team.cyclistBlackNumber.photo}}" />
-            </div>
-            <div class="card col col-50 white-number-cyclist">
-                <h4>{{team.cyclistWhiteNumber.firstName}} {{team.cyclistWhiteNumber.lastName}}</h4>
-                <img ng-src="{{team.cyclistWhiteNumber.photo}}" />
+<ion-view>
+    <ion-nav-title>Team {{team.name}}</ion-nav-title>
+    <ion-content class="text-center padding bg-light-gray">
+        <div class="spinner-container" ng-show="loading">
+            <ion-spinner class="spinner" ></ion-spinner>
+        </div>
+
+        <div class="team-details" ng-hide="loading">
+            <h2>
+                <span class="bold">{{team.ranking}}.</span> {{team.name}}
+            </h2>
+            <img src="{{team.outfitPicture}}" />
+            <h3>{{team.laps}} laps</h3>
+            
+            <div class="row padding">
+                <div class="card col col-50 black-number-cyclist bg-dark">
+                    <h4 class="text-light">{{team.cyclistBlackNumber.firstName}} {{team.cyclistBlackNumber.lastName}}</h4>
+                    <img ng-src="{{team.cyclistBlackNumber.photo}}" />
+                </div>
+                <div class="card col col-50 white-number-cyclist">
+                    <h4>{{team.cyclistWhiteNumber.firstName}} {{team.cyclistWhiteNumber.lastName}}</h4>
+                    <img ng-src="{{team.cyclistWhiteNumber.photo}}" />
+                </div>
             </div>
         </div>
     </ion-content>

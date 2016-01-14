@@ -1,9 +1,11 @@
 angular.module('app.controllers')
 
-.controller('TeamsController', function ($scope, Teams) {
+.controller('TeamsController', function($scope, Teams) {
     $scope.teams = [];
-    
-    Teams.getAll().then(function (res) {
-         $scope.teams = res.data;
+    $scope.loading = true;
+
+    Teams.getAll().then(function(res) {
+        $scope.teams = res.data;
+        $scope.loading = false;
     });
-})
+});
