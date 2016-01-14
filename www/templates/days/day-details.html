@@ -1,0 +1,16 @@
+<ion-view view-title="{{day.description}}">
+    <ion-content>
+        <div class="text-center bg-dark padding">
+            <h2 class="text-light">{{day.description}}</h2>
+            <h3 class="text-light">{{day.date | date:'EEEE'}}</h3>
+            <p class="text-light">{{day.date | date:'dd.MM.yyyy'}}</p>
+        </div>
+        <ion-list>
+            <ion-item collection-repeat="competition in competitions">
+                <h2>{{competition.name}}</h2>
+                <h3>{{competition.startingTime}}</h3>
+                <p>{{competition.description}}</p>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

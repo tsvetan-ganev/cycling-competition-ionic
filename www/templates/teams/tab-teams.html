@@ -1,0 +1,12 @@
+<ion-view view-title="Ranking">
+  <ion-content>
+   <ion-list>
+     <ion-item ng-repeat="team in teams" href="#/tab/teams/{{team.id}}">
+        <h2>
+            <span class="bold">{{team.ranking}}.</span> {{team.name}}
+        </h2>
+        <p>{{team.laps}} laps</p>
+     </ion-item>
+   </ion-list>
+  </ion-content>
+</ion-view>

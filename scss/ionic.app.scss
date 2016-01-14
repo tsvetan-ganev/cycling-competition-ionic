@@ -1,0 +1,59 @@
+$light:                           #fff !default;
+$stable:                          #ffebee !default;
+$positive:                        #ED322D !default;
+$calm:                            #ef9a9a !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #d50000 !default;
+$royal:                           #886aea !default;
+$dark:                            #404041 !default;
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
+// Custom Styling
+ion-tab {
+    border-color: $assertive;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.bg-dark {
+    background-color: $dark;
+}
+
+.bg-stable {
+    background-color: $stable;
+}
+
+.text-light {
+    color: $light;
+}
+
+.text-dark {
+    color: $dark;
+}
+
+.spinner svg {
+    width: 6em;
+    height: 6em;
+}
+
+.spinner-container {
+    width: 6em;
+    height: 6em;
+    
+    position: absolute;
+    margin: -3em 0 0 -3em;
+    left: 50%;
+    top: 50%;
+}

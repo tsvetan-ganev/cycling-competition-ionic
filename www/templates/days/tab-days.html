@@ -1,0 +1,17 @@
+<ion-view view-title="Program Days">
+    <ion-content>
+        <div class="spinner-container" ng-show="loading">
+            <ion-spinner class="spinner" ></ion-spinner>
+        </div>
+
+        <div class="content-container" ng-hide="loading">
+            <ion-list>
+                <ion-item ng-repeat="day in days" href="#/tab/days/{{day.id}}">
+                    <h2>{{day.description}}</h2>
+                    <h3>{{day.date | date:'EEEE'}}</h3>
+                    <p>{{day.date | date:'dd.MM.yyyy'}}</p>
+                </ion-item>
+            </ion-list>
+        </div>
+    </ion-content>
+</ion-view>
