@@ -1,12 +1,20 @@
 <ion-view view-title="Ranking">
-  <ion-content>
-   <ion-list>
-     <ion-item ng-repeat="team in teams" href="#/tab/teams/{{team.id}}">
-        <h2>
-            <span class="bold">{{team.ranking}}.</span> {{team.name}}
-        </h2>
-        <p>{{team.laps}} laps</p>
-     </ion-item>
-   </ion-list>
-  </ion-content>
+    <ion-content>
+        <ion-list>
+            <ion-item ng-repeat="team in teams" href="#/tab/teams/{{team.id}}">
+                <div ng-if="$index < 3">
+                    <h2 class="top-3">
+                        <span class="bold">{{team.ranking}}.</span> {{team.name}}
+                    </h2>
+                    <p class="top-3">{{team.laps}} laps</p>
+                </div>
+                <div ng-if="$index > 2">
+                    <h2>
+                        <span class="bold">{{team.ranking}}.</span> {{team.name}}
+                    </h2>
+                    <p>{{team.laps}} laps</p>
+                </div>
+            </ion-item>
+        </ion-list>
+    </ion-content>
 </ion-view>
