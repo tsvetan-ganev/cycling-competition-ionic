@@ -13,34 +13,39 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
   });
 })
 
+// Set global $http timeout
+.config(['$httpProvider', function($httpProvider) {
+  $httpProvider.defaults.timeout = 8000;
+}])
+
 // Routing configuration
 .config(function($stateProvider, $urlRouterProvider) {
 
   $stateProvider
-  .state('tab', {
-    url: '/tab',
-    abstract: true,
-    templateUrl: 'templates/tabs.html'
-  })
+    .state('tab', {
+      url: '/tab',
+      abstract: true,
+      templateUrl: 'templates/tabs.html'
+    })
 
   .state('tab.days', {
-    url: '/days',
-    views: {
-      'tab-days': {
-        templateUrl: 'templates/days/tab-days.html',
-        controller: 'DaysController'
+      url: '/days',
+      views: {
+        'tab-days': {
+          templateUrl: 'templates/days/tab-days.html',
+          controller: 'DaysController'
+        }
       }
-    }
-  })
-  .state('tab.day-details', {
+    })
+    .state('tab.day-details', {
       url: '/days/:dayId',
       views: {
-          'tab-days': {
-              templateUrl: 'templates/days/day-details.html',
-              controller: 'DayDetailsController'
-          }
+        'tab-days': {
+          templateUrl: 'templates/days/day-details.html',
+          controller: 'DayDetailsController'
+        }
       }
-  })
+    })
 
   .state('tab.teams', {
       url: '/teams',
@@ -62,23 +67,23 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
     })
 
   .state('tab.cyclists', {
-    url: '/cyclists',
-    views: {
-      'tab-cyclists': {
-        templateUrl: 'templates/cyclists/tab-cyclists.html',
-        controller: 'CyclistsController'
+      url: '/cyclists',
+      views: {
+        'tab-cyclists': {
+          templateUrl: 'templates/cyclists/tab-cyclists.html',
+          controller: 'CyclistsController'
+        }
       }
-    }
-  })
-  .state('tab.cyclist-details', {
+    })
+    .state('tab.cyclist-details', {
       url: '/cyclists/:cyclistId',
       views: {
-          'tab-cyclists': {
-              templateUrl: 'templates/cyclists/cyclist-details.html',
-              controller: 'CyclistDetailsController'
-          }
+        'tab-cyclists': {
+          templateUrl: 'templates/cyclists/cyclist-details.html',
+          controller: 'CyclistDetailsController'
+        }
       }
-  })
+    })
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/days');

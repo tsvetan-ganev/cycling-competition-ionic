@@ -1,7 +1,11 @@
 <ion-view>
     <ion-nav-title>{{cyclist.firstName}} {{cyclist.lastName}}</ion-nav-title>
     <ion-content class="padding row bg-light-gray">
-        <div class="col">
+        <div class="spinner-container" ng-show="loading">
+          <ion-spinner class="spinner"></ion-spinner>
+        </div>
+
+        <div class="cyclist-details col" ng-hide="loading">
             <div class="card padding text-center">
                 <img src="{{ cyclist.photo }}" alt="{{cyclist.lastName}}" >
                 <h2>{{cyclist.firstName}} {{cyclist.lastName}}</h2>
