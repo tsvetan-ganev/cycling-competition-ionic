@@ -4,8 +4,15 @@
         <div class="spinner-container" ng-show="loading">
           <ion-spinner class="spinner"></ion-spinner>
         </div>
+        
+        <div class="text-center" ng-show="error">
+            <h2>Connection error</h2>
+            <button class="button button-positive icon-right ion-refresh" ng-click="load()">
+                Refresh
+            </button>
+        </div>
 
-        <div class="cyclist-details col" ng-hide="loading">
+        <div class="cyclist-details col" ng-hide="loading" ng-hide="error">
             <div class="card padding text-center">
                 <img src="{{ cyclist.photo }}" alt="{{cyclist.lastName}}" >
                 <h2>{{cyclist.firstName}} {{cyclist.lastName}}</h2>
@@ -15,5 +22,3 @@
         </div>
     </ion-content>
 </ion-view>
-
-<!--style="margin: 0 auto; width:100px"-->

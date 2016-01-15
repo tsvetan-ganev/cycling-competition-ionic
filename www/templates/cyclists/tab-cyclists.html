@@ -1,17 +1,23 @@
 <ion-view>
     <ion-nav-title>Cyclists</ion-nav-title>
-  <ion-content>
-      <div class="spinner-container" ng-show="loading">
-          <ion-spinner class="spinner"></ion-spinner>
-      </div>
+    <ion-content>
+        <div class="spinner-container" ng-show="loading">
+            <ion-spinner class="spinner"></ion-spinner>
+        </div>
 
-      <ion-list ng-hide="loading">
-        <ion-item ng-repeat="cyclist in cyclists" 
-                  href="#/tab/cyclists/{{cyclist.cyclistId}}" class="item-avatar">
-            <img src="{{cyclist.photo}}" />
-            <h3>{{cyclist.firstName}} {{cyclist.lastName}}</h3>
-            <h2>{{cyclist.countryName}}</h2>
-         </ion-item>
-      </ion-list>
-  </ion-content>
+        <div class="text-center" ng-show="error">
+            <h2>Connection error</h2>
+            <button class="button button-positive icon-right ion-refresh" ng-click="load()">
+                Refresh
+            </button>
+        </div>
+
+        <ion-list ng-hide="loading" ng-hide="error">
+            <ion-item ng-repeat="cyclist in cyclists" href="#/tab/cyclists/{{cyclist.cyclistId}}" class="item-avatar">
+                <img src="{{cyclist.photo}}" />
+                <h3>{{cyclist.firstName}} {{cyclist.lastName}}</h3>
+                <h2>{{cyclist.countryName}}</h2>
+            </ion-item>
+        </ion-list>
+    </ion-content>
 </ion-view>
