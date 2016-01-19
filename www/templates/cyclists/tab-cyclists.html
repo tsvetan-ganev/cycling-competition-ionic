@@ -1,18 +1,18 @@
 <ion-view>
     <ion-nav-title>Cyclists</ion-nav-title>
     <ion-content>
-        <div class="spinner-container" ng-show="loading">
+        <div class="spinner-container" ng-if="loading">
             <ion-spinner class="spinner"></ion-spinner>
         </div>
 
-        <div class="text-center" ng-show="error">
+        <div class="text-center" ng-if="error">
             <h2>Connection error</h2>
             <button class="button button-positive icon-right ion-refresh" ng-click="load()">
                 Refresh
             </button>
         </div>
 
-        <ion-list ng-hide="loading" ng-hide="error">
+        <ion-list ng-if="!error && !loading">
             <ion-item ng-repeat="cyclist in cyclists" href="#/tab/cyclists/{{cyclist.cyclistId}}" class="item-avatar">
                 <img src="{{cyclist.photo}}" />
                 <h3>{{cyclist.firstName}} {{cyclist.lastName}}</h3>
