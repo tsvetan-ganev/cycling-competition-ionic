@@ -9,6 +9,7 @@
     </author>
   <content src="index.html"/>
   <access origin="*"/>
+  <preference name="windows-target-version" value="8.1" />
   <preference name="webviewbounce" value="false"/>
   <preference name="UIWebViewBounce" value="false"/>
   <preference name="DisallowOverscroll" value="true"/>
@@ -66,5 +67,17 @@
     <splash src="resources/ios/splash/Default-Portrait.png" height="1024" width="768"/>
     <splash src="resources/ios/splash/Default@2x.png" height="960" width="640"/>
     <splash src="resources/ios/splash/Default.png" height="480" width="320"/>
+  </platform>
+  <platform name="windows">
+	  <icon height="99" src="resources/windows/icon/ApplicationIcon.png" width="99"/>
+	  <icon height="150" src="resources/windows/icon/logo.png" width="150"/>
+	  <icon height="50" src="resources/windows/icon/storelogo.png" width="50"/>
+	  <icon height="106" src="resources/windows/icon/lumia630.png" width="106"/>
+	  <icon src="resources/windows/icon/Square71x71Logo.scale-240.png" width="170" height="170" />
+	  <icon src="resources/windows/icon/Square150x150Logo.scale-240.png" width="360" height="360" />
+	  <icon src="resources/windows/icon/Square71x71Logo.scale-100.png" width="71" height="71" />
+	  <icon src="resources/windows/icon/Square44x44Logo.scale-100.png" width="44" height="44" />
+	  <splash height="800" width="480" src="resources/windows/splash/SplashScreenImage.screen-WVGA.jpg"/>
+	  <splash height="1280" width="720" src="resources/windows/splash/SplashScreenImage.screen-720p.jpg"/>
   </platform>
 </widget>
