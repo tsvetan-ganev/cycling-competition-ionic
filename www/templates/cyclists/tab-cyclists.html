@@ -13,7 +13,8 @@
         </div>
 
         <ion-list ng-if="!error && !loading">
-            <ion-item ng-repeat="cyclist in cyclists" href="#/tab/cyclists/{{cyclist.cyclistId}}" class="item-avatar">
+            <ion-item class="item-avatar" ng-repeat="cyclist in cyclists track by cyclist.cyclistId"
+                      href="#/tab/cyclists/{{cyclist.cyclistId}}">
                 <img src="{{cyclist.photo}}" />
                 <h3>{{cyclist.firstName}} {{cyclist.lastName}}</h3>
                 <h2>{{cyclist.countryName}}</h2>

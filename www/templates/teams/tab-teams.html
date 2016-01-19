@@ -12,7 +12,7 @@
         </div>
 
         <ion-list ng-if="!error && !loading">
-            <ion-item ng-repeat="team in teams" href="#/tab/teams/{{team.id}}">
+            <ion-item ng-repeat="team in teams track by team.id" href="#/tab/teams/{{team.id}}">
                 <div ng-if="$index < 3">
                     <h2>
                         <span class="bold">{{team.ranking}}.</span> <span class="top-3">{{team.name}}</span>
