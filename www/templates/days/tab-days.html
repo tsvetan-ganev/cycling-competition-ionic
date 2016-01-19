@@ -14,7 +14,7 @@
         <div class="content-container" ng-hide="loading" ng-hide="error">
             <ion-list>
                 <ion-item ng-repeat="day in days" href="#/tab/days/{{day.id}}">
-                    <h2>{{day.description}}</h2>
+                    <h2 class="text-positive bold">{{day.description}}</h2>
                     <h3>{{day.date | date:'EEEE'}}</h3>
                     <p>{{day.date | date:'dd.MM.yyyy'}}</p>
                 </ion-item>

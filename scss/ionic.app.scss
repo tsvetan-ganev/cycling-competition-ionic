@@ -21,7 +21,7 @@ ion-tab {
 }
 
 .bold {
-    font-weight: bold;
+    font-weight: bold !important;
 }
 
 .text-center {
@@ -70,4 +70,12 @@ ion-tab {
 .top-3 {
     color: $royal !important;
     font-weight: bold !important;
+}
+
+.text-positive {
+    color: $positive;
+}
+
+h2 {
+    padding-bottom: 6px;
 }
