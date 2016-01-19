@@ -7,18 +7,20 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
             /**
              * Windows Phone 8.1 fix for the hardware back button 
              */
-            $ionicPlatform.registerBackButtonAction(function (evt) {
-                if (evt && evt.type == 'backclick') {
-                    $ionicHistory.goBack();
-                }
-                return true;
-            }, 100);
-            
             if (isWindows) {
+                $ionicPlatform.registerBackButtonAction(function (evt) {
+                    if (evt && evt.type == 'backclick') {
+                        $ionicHistory.goBack();
+                    }
+                    return true;
+                }, 100);
+                
                 WinJS.Application.onbackclick = function (evt) {
                     $ionicPlatform.hardwareBackButtonClick(evt);
                     return true;
                 }
+
+                screen.lockOrientation('portrait');
             }
 
             if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard && !isWindows) {
@@ -105,7 +107,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
                     }
                 }
             })
-            
+
             .state('tab.about', {
                 url: '/about',
                 views: {
