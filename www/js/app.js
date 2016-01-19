@@ -1,8 +1,26 @@
 angular.module('app', ['ionic', 'app.controllers', 'app.services'])
 
-    .run(function ($ionicPlatform) {
+    .run(function ($ionicPlatform, $ionicHistory) {
         $ionicPlatform.ready(function () {
             var isWindows = ionic.Platform.isWindowsPhone() || (ionic.Platform.platform() == 'win64');
+            
+            /**
+             * Windows Phone 8.1 fix for the hardware back button 
+             */
+            $ionicPlatform.registerBackButtonAction(function (evt) {
+                if (evt && evt.type == 'backclick') {
+                    $ionicHistory.goBack();
+                }
+                return true;
+            }, 100);
+            
+            if (isWindows) {
+                WinJS.Application.onbackclick = function (evt) {
+                    $ionicPlatform.hardwareBackButtonClick(evt);
+                    return true;
+                }
+            }
+
             if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard && !isWindows) {
                 cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
                 cordova.plugins.Keyboard.disableScroll(true);
@@ -84,6 +102,15 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services'])
                     'tab-cyclists': {
                         templateUrl: 'templates/cyclists/cyclist-details.html',
                         controller: 'CyclistDetailsController'
+                    }
+                }
+            })
+            
+            .state('tab.about', {
+                url: '/about',
+                views: {
+                    'tab-about': {
+                        templateUrl: 'templates/about/tab-about.html',
                     }
                 }
             })
