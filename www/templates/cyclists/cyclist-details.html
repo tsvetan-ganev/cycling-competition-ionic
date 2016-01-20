@@ -14,14 +14,15 @@
 
         <div class="cyclist-details" ng-if="!error && !loading">
             <div class="list card text-center">
-                <a class="item item-avatar" href="#/tab/cyclists/teams/{{cyclist.team.id}}">
+                <a class="item item-avatar text-left" href="#/tab/cyclists/teams/{{cyclist.team.id}}">
                     <img src="{{cyclist.team.outfitPicture}}">
-                    <h3>{{ cyclist.team.name }}</h3>
+                    <h3>Team</h3>
+                    <h2>{{ cyclist.team.name }}</h2>
                 </a>
                 <div class="item">
                     <img src="{{ cyclist.photo }}" alt="{{cyclist.lastName}}">
                     <h2>{{cyclist.firstName}} {{cyclist.lastName}}</h2>
-                    <p>{{cyclist.dateOfBirth | date: 'dd.MM.yyyy'}}</p>
+                    <h4>{{cyclist.dateOfBirth | date: 'dd.MM.yyyy'}}</h4>
                     <p>{{cyclist.countryName}}</p>
                 </div>
             </div>
