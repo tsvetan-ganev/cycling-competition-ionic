@@ -1,6 +1,6 @@
 angular.module('app')
 
-.config(function ($stateProvider, $urlRouterProvider) {
+    .config(function ($stateProvider, $urlRouterProvider) {
 
         $stateProvider
             .state('tab', {
@@ -62,6 +62,15 @@ angular.module('app')
                     'tab-cyclists': {
                         templateUrl: 'templates/cyclists/cyclist-details.html',
                         controller: 'CyclistDetailsController'
+                    }
+                }
+            })
+            .state('tab.cyclist-team-details', {
+                url: '/cyclists/teams/:teamId',
+                views: {
+                    'tab-cyclists': {
+                        templateUrl: 'templates/teams/team-details.html',
+                        controller: 'TeamDetailsController'
                     }
                 }
             })
